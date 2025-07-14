@@ -1,15 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MyPhoneBook.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/30 17:49:46 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/07/04 11:11:18 by ricmanue         ###   ########.fr       */
+/*   Created: 2025/07/14 09:20:25 by ricmanue          #+#    #+#             */
+/*   Updated: 2025/07/14 10:02:28 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
+int	main()
+{
+	PhoneBook phonebook;
+	std::string prompt;
 
+	while (std::getline(std::cin, prompt) && ((prompt.compare("EXIT") != 0) || !std::cin))
+	{
+		if (prompt.compare("ADD") == 0)
+			phonebook.addContact();
+		else if (prompt.compare("SEARCH") == 0)
+			phonebook.searchContact();
+		else
+			std::cout << "Invalid Command." << std::endl;
+	}
+	return (0);
+}
