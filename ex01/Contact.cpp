@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/30 17:28:24 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/07/14 17:14:43 by ricmanue         ###   ########.fr       */
+/*   Created: 2025/07/14 17:05:20 by ricmanue          #+#    #+#             */
+/*   Updated: 2025/07/14 17:06:31 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_H
-# define CONTACT_H
-
-#include <iostream>
-#include <string>
 #include "Contact.hpp"
 
-
-# define SUCCESS 0
-# define UNSUCCESS -1
-
-class PhoneBook
+void	Contact::addName()
 {
-	private :
-			Contact contact[8];
-	public :
-		void	addContact(Contact &newContact);
-		void	searchContact();
 
-};
-
-#endif
+}
