@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 17:28:24 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/07/14 17:14:43 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/07/15 10:06:40 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class PhoneBook
 			Contact contact[8];
 	public :
 		void	addContact(Contact &newContact);
-		void	searchContact();
+		// void	searchContact();
 
 };
 

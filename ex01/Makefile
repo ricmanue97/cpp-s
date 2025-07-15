@@ -3,16 +3,16 @@ NAME = MyAwesomePhoneBook
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = MyPhoneBook.cpp
-OBJS = MyPhoneBook.o
+SRCS = MyPhoneBook.cpp Contact.cpp main.cpp
+OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
-megaphone.o: megaphone.cpp
-	$(CXX) $(CXXFLAGS) -c MyPhoneBook.cpp -o MyPhoneBook.o
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
