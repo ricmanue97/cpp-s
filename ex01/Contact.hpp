@@ -6,14 +6,15 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 10:57:05 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/07/14 17:03:53 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/07/17 13:58:29 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-# define PHONEBOOK_H
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
 #include <iostream>
+#include <iomanip>
 #include <string>
 
 
@@ -34,6 +35,8 @@ class Contact
 			void	addNickname();
 			void	addPhoneNumber();
 			void	addDarkestSecret();
+			void	displayLine();
+			int		isEmpty();
 };
 
 #endif

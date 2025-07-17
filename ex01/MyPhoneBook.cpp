@@ -6,46 +6,76 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 17:49:46 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/07/15 10:11:50 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/07/17 15:24:34 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
 
-void	PhoneBook::addContact(Contact &newContact)
+void	PhoneBook::addContact()
 {
+	int j;
 	int i;
+
+	i = 6;
+	j = 0;
+	while (i <= 6)
+	{
+		contact[i + 1] = contact[i];
+		i--;
+	}
+	while (j < 5 && std::cin)
+	{
+		if (j == 0)
+		{
+			std::cout << "Add First name:" << std::endl;
+			contact[i].addName();
+		}
+		else if (j == 1)
+		{
+			std::cout << "Add Last name:" << std::endl;
+			contact[i].addLastName();
+		}
+		else if (j == 2)
+		{
+			std::cout << "Add nickname:" << std::endl;
+			contact[i].addNickname();
+		}
+		else if (j == 3)
+		{
+			std::cout << "Add Phone Number:" << std::endl;
+			contact[i].addPhoneNumber();
+		}
+		else if (j == 4)
+		{
+			std::cout << "Add Darkest Secret:" << std::endl;
+			contact[i].addDarkestSecret();
+		}
+		j++;
+	}
+	std::cout << "Contact sucessfully added!!" << std::endl << std::endl << std::endl;
+}
+
+void	PhoneBook::searchContact()
+{
+	int	i;
+
+	if (contact[0].isEmpty() == 1)
+	{
+		std::cout << "Phonebook is empty DUM DUM!!" << std::endl ;
+		return ;
+	}
+
+	std::cout << "-------------------------------------------" << std::endl;
+	std::cout << "     Index|First Name| Last Name|  Nickname" << std::endl;
 
 	i = 0;
 
-	while (i < 5 && std::cin)
+	while (i < 8 && !contact[i].isEmpty())
 	{
-		if (i == 0)
-		{
-			std::cout << "Add First name:" << std::endl;
-			newContact.addName();
-		}
-		else if (i == 1)
-		{
-			std::cout << "Add Last name:" << std::endl;
-			newContact.addLastName();
-		}
-		else if (i == 2)
-		{
-			std::cout << "Add nickname:" << std::endl;
-			newContact.addNickname();
-		}
-		else if (i == 3)
-		{
-			std::cout << "Add Phone Number:" << std::endl;
-			newContact.addPhoneNumber();
-		}
-		else if (i == 4)
-		{
-			std::cout << "Add Darkest Secret:" << std::endl;
-			newContact.addDarkestSecret();
-		}
+		std::cout << "         " << i + 1 << "|";
+		contact[i].displayLine();
 		i++;
 	}
 }

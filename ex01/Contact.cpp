@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 17:05:20 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/07/15 10:17:06 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/07/17 14:10:11 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@ void	Contact::addName()
 {
 	std::string name;
 
+	if (!std::cin)
+		return ;
 	getline(std::cin, name);
-
 	this->FirstName = name;
 }
 
@@ -25,8 +26,9 @@ void	Contact::addLastName()
 {
 	std::string name;
 
+	if (!std::cin)
+		return ;
 	getline(std::cin, name);
-
 	this->LastName = name;
 }
 
@@ -34,8 +36,9 @@ void	Contact::addNickname()
 {
 	std::string name;
 
+	if (!std::cin)
+		return ;
 	getline(std::cin, name);
-
 	this->NickName = name;
 }
 
@@ -69,7 +72,29 @@ void	Contact::addDarkestSecret()
 {
 	std::string secret;
 
+	if (!std::cin)
+		return ;
 	getline(std::cin, secret);
-
 	this->DarkestSecret = secret;
+}
+
+void	Contact::displayLine()
+{
+	std::string arr[] = {FirstName, LastName, NickName, ""};
+
+	for (int i = 0; !arr[i].empty(); i++)
+	{
+		if (arr[i].length() <= 10)
+			std::cout <<  std::setw(10) << arr[i].substr(0, 10) << "|";
+		else
+			std::cout << arr[i].substr(0, 9) << ".|";
+	}
+	std::cout << std::endl;
+}
+
+int	Contact::isEmpty()
+{
+	if (FirstName.empty())
+		return (1);
+	return (0);
 }
