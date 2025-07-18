@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 10:57:05 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/07/17 13:58:29 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/07/18 16:44:10 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@
 
 # define SUCCESS 0
 # define UNSUCCESS -1
+# define RED "\033[31m"
+# define GREEN "\033[32m"
+# define YELLOW "\033[33m"
+# define RST "\033[0m"
 
 class Contact
 {
@@ -36,6 +40,7 @@ class Contact
 			void	addPhoneNumber();
 			void	addDarkestSecret();
 			void	displayLine();
+			void	displayContact();
 			int		isEmpty();
 };
 

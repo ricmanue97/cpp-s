@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 17:05:20 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/07/17 14:10:11 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/07/18 16:56:09 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,70 @@
 void	Contact::addName()
 {
 	std::string name;
+	bool valid = false;
 
-	if (!std::cin)
-		return ;
-	getline(std::cin, name);
+	while (!valid)
+	{
+		getline(std::cin, name);
+		if (!std::cin)
+			return ;
+		valid = !name.empty();
+		for (size_t i = 0; i < name.length() && valid; ++i)
+		{
+			if (!isalpha(name[i]))
+				valid = false;
+		}
+		if (!valid)
+			std::cout << RED << "Invalid name. Please use letters only: " << RST;
+	}
 	this->FirstName = name;
 }
 
 void	Contact::addLastName()
 {
 	std::string name;
+	bool valid = false;
 
-	if (!std::cin)
-		return ;
-	getline(std::cin, name);
+	while (!valid)
+	{
+		getline(std::cin, name);
+		if (!std::cin)
+			return ;
+		valid = !name.empty();
+		for (size_t i = 0; i < name.length() && valid; ++i)
+		{
+			if (!isalpha(name[i]))
+				valid = false;
+		}
+		if (!valid)
+			std::cout << RED << "Invalid name. Please use letters only: " << RST << std::endl;
+	}
 	this->LastName = name;
 }
 
 void	Contact::addNickname()
 {
 	std::string name;
+	bool valid = false;
 
-	if (!std::cin)
-		return ;
-	getline(std::cin, name);
-	this->NickName = name;
+	while (!valid)
+	{
+		getline(std::cin, name);
+		if (!std::cin)
+			return ;
+		for (size_t i = 0; i < name.length(); i++)
+		{
+			if (name[i] <= 33 || name[i] >= 127)
+			{
+				std::cout << RED <<"Invalid characters for nickname, try again!" << RST << std::endl;
+				valid = false;
+				break ;
+			}
+			else
+				valid = true;
+		}
+		this->NickName = name;
+	}
 }
 
 void	Contact::addPhoneNumber()
@@ -48,11 +87,11 @@ void	Contact::addPhoneNumber()
 	int	flag;
 
 	flag = 0;
-	if (!std::cin)
-		return;
 	while (flag == 0)
 	{
 		getline(std::cin, number);
+		if (!std::cin)
+			return;
 		if (!isdigit(number[0]))
 			number = "";
 		for (int i = 1; number[i]; i++)
@@ -61,7 +100,7 @@ void	Contact::addPhoneNumber()
 				number = "";
 		}
 		if (number == "")
-			std::cout << "Invalid phone number, try again." << std::endl;
+			std::cout << RED << "Invalid phone number, try again." << RST << std::endl;
 		else
 			flag = 1;
 	}
@@ -72,9 +111,9 @@ void	Contact::addDarkestSecret()
 {
 	std::string secret;
 
+	getline(std::cin, secret);
 	if (!std::cin)
 		return ;
-	getline(std::cin, secret);
 	this->DarkestSecret = secret;
 }
 
@@ -97,4 +136,13 @@ int	Contact::isEmpty()
 	if (FirstName.empty())
 		return (1);
 	return (0);
+}
+
+void	Contact::displayContact()
+{
+	std::cout << "First name: " << FirstName << std::endl;
+	std::cout << "Last name: " << LastName << std::endl;
+	std::cout << "Nickname: " << NickName << std::endl;
+	std::cout << "Phonenumber: " << PhoneNumber << std::endl;
+	std::cout << "Darkest Secret: " << DarkestSecret << std::endl;
 }
