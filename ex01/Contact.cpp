@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 17:05:20 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/07/18 16:56:09 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/07/21 09:40:27 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	Contact::addName()
 				valid = false;
 		}
 		if (!valid)
-			std::cout << RED << "Invalid name. Please use letters only: " << RST;
+			std::cout << RED << "Invalid name. Please use letters only, try again! " << RST << std::endl;
 	}
 	this->FirstName = name;
 }
@@ -51,7 +51,7 @@ void	Contact::addLastName()
 				valid = false;
 		}
 		if (!valid)
-			std::cout << RED << "Invalid name. Please use letters only: " << RST << std::endl;
+			std::cout << RED << "Invalid name. Please use letters only, try again! " << RST << std::endl;
 	}
 	this->LastName = name;
 }
@@ -100,7 +100,7 @@ void	Contact::addPhoneNumber()
 				number = "";
 		}
 		if (number == "")
-			std::cout << RED << "Invalid phone number, try again." << RST << std::endl;
+			std::cout << RED << "Invalid phone number, try again!" << RST << std::endl;
 		else
 			flag = 1;
 	}

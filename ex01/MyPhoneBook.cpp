@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 17:49:46 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/07/18 14:06:32 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/07/21 09:33:03 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	PhoneBook::addContact()
 		j++;
 	}
 	if (std::cin)
-		std::cout << "Contact sucessfully added!!" << std::endl << std::endl << std::endl;
+		std::cout << GREEN <<  "Contact sucessfully added!!" << RST <<  std::endl << std::endl << std::endl;
 }
 
 void	PhoneBook::searchContact()
@@ -68,12 +68,12 @@ void	PhoneBook::searchContact()
 	flag = 0;
 	if (contact[0].isEmpty() == 1)
 	{
-		std::cout << "Phonebook is empty DUM DUM!!" << std::endl ;
+		std::cout << RED <<  "Phonebook is empty DUM DUM!!" << RST <<  std::endl ;
 		return ;
 	}
-	std::cout << "Choose the Index of the contact you wish to see!" << std::endl;
-	std::cout << "-------------------------------------------" << std::endl;
-	std::cout << "     Index|First Name| Last Name|  Nickname" << std::endl;
+	std::cout << YELLOW <<  "Choose the Index of the contact you wish to see!" << RST << std::endl;
+	std::cout << YELLOW <<  "-------------------------------------------" << RST << std::endl;
+	std::cout << YELLOW <<  "     Index|First Name| Last Name|  Nickname" << RST << std::endl;
 
 	i = 0;
 
@@ -91,14 +91,14 @@ void	PhoneBook::searchContact()
 			return ;
 		if (index.length() != 1 || !isdigit(index[0]))
 		{
-			std::cout << "Index is a number between 1 and 8, try again." << std::endl;
+			std::cout << RED <<  "Index is a number between 1 and 8, try again." << RST <<  std::endl;
 			continue ;
 		}
 		i = index[0] - 48;
 		if (i < 1 || i > 8)
-			std::cout << "Index is a number between 1 and 8, try again." << std::endl;
+			std::cout << RED <<  "Index is a number between 1 and 8, try again." << RST <<  std::endl;
 		else if (contact[i - 1].isEmpty())
-			std::cout << "Index is not valid, try again." << std::endl;
+			std::cout << RED <<  "Index is not valid, try again." << RST <<  std::endl;
 		else
 		{
 			contact[i - 1].displayContact();

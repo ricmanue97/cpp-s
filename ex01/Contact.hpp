@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 10:57:05 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/07/18 16:44:10 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/07/21 09:48:34 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 #include <string>
 
 
-# define SUCCESS 0
-# define UNSUCCESS -1
 # define RED "\033[31m"
 # define GREEN "\033[32m"
 # define YELLOW "\033[33m"

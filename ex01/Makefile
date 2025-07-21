@@ -1,6 +1,6 @@
 NAME = MyAwesomePhoneBook
 
-CXX = clang++
+CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = MyPhoneBook.cpp Contact.cpp main.cpp

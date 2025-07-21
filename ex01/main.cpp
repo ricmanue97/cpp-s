@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 09:20:25 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/07/18 16:57:02 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/07/21 09:30:55 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ int	main()
 			phonebook.searchContact();
 		else
 		{
-			std::cout << "Invalid Command. Only ADD, SEARCH or EXIT" << std::endl;
+			std::cout << RED <<  "Invalid Command. Only ADD, SEARCH or EXIT" << RST <<  std::endl;
 			continue;
 		}
 		if (std::cin)
-			std::cout << "Write ADD for new Contact and SEARCH to search for a contact" << std::endl;
+			std::cout << YELLOW <<  "Write ADD for new Contact and SEARCH to search for a contact" << RST <<  std::endl;
 	}
 	return (0);
 }
