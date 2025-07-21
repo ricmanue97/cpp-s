@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MyPhoneBook.cpp                                    :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 17:49:46 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/07/21 09:33:03 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/07/21 15:54:02 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,45 +16,34 @@
 void	PhoneBook::addContact()
 {
 	int j;
-	int i;
+	static int i;
 
-	i = 6;
 	j = 0;
-	while (i >= 0)
+
+	switch (j)
 	{
-		contact[i + 1] = contact[i];
-		i--;
-	}
-	i = 0;
-	while (j < 5 && std::cin)
-	{
-		if (j == 0)
-		{
+		case 1:
 			std::cout << "Add First name:" << std::endl;
 			contact[i].addName();
-		}
-		else if (j == 1)
-		{
+			break;
+		case 2:
 			std::cout << "Add Last name:" << std::endl;
 			contact[i].addLastName();
-		}
-		else if (j == 2)
-		{
+			break;
+		case 3:
 			std::cout << "Add nickname:" << std::endl;
 			contact[i].addNickname();
-		}
-		else if (j == 3)
-		{
+			break;
+		case 4:
 			std::cout << "Add Phone Number:" << std::endl;
 			contact[i].addPhoneNumber();
-		}
-		else if (j == 4)
-		{
+			break;
+		case 5:
 			std::cout << "Add Darkest Secret:" << std::endl;
 			contact[i].addDarkestSecret();
-		}
-		j++;
+			break;
 	}
+
 	if (std::cin)
 		std::cout << GREEN <<  "Contact sucessfully added!!" << RST <<  std::endl << std::endl << std::endl;
 }
