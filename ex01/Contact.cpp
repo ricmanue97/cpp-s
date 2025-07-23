@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 17:05:20 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/07/23 09:11:14 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/07/23 09:29:18 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,11 +121,11 @@ int	Contact::isEmpty()
 
 void	Contact::displayContact()
 {
-	std::cout << "First name: " << FirstName << std::endl;
-	std::cout << "Last name: " << LastName << std::endl;
-	std::cout << "Nickname: " << NickName << std::endl;
-	std::cout << "Phonenumber: " << PhoneNumber << std::endl;
-	std::cout << "Darkest Secret: " << DarkestSecret << std::endl;
+	std::cout << YELLOW << "First name: " << FirstName << RST <<  std::endl;
+	std::cout << YELLOW << "Last name: " << LastName << RST <<  std::endl;
+	std::cout << YELLOW << "Nickname: " << NickName << RST <<  std::endl;
+	std::cout << YELLOW << "Phonenumber: " << PhoneNumber << RST <<  std::endl;
+	std::cout << YELLOW << "Darkest Secret: " << DarkestSecret << RST <<  std::endl;
 }
 
 Contact::Contact(){
