@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 17:49:46 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/07/21 15:54:02 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/07/23 09:10:06 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,34 +15,37 @@
 
 void	PhoneBook::addContact()
 {
-	int j;
 	static int i;
 
-	j = 0;
+	std::cout << "Add First name:" << std::endl;
+	contact[i].addName(1);
+	if (!std::cin)
+		return;
 
-	switch (j)
-	{
-		case 1:
-			std::cout << "Add First name:" << std::endl;
-			contact[i].addName();
-			break;
-		case 2:
-			std::cout << "Add Last name:" << std::endl;
-			contact[i].addLastName();
-			break;
-		case 3:
-			std::cout << "Add nickname:" << std::endl;
-			contact[i].addNickname();
-			break;
-		case 4:
-			std::cout << "Add Phone Number:" << std::endl;
-			contact[i].addPhoneNumber();
-			break;
-		case 5:
-			std::cout << "Add Darkest Secret:" << std::endl;
-			contact[i].addDarkestSecret();
-			break;
-	}
+	std::cout << "Add Last name:" << std::endl;
+	contact[i].addName(2);
+	if (!std::cin)
+		return;
+
+	std::cout << "Add nickname:" << std::endl;
+	contact[i].addNickname();
+	if (!std::cin)
+		return;
+
+	std::cout << "Add Phone Number:" << std::endl;
+	contact[i].addPhoneNumber();
+	if (!std::cin)
+		return;
+
+	std::cout << "Add Darkest Secret:" << std::endl;
+	contact[i].addDarkestSecret();
+	if (!std::cin)
+		return;
+
+	if (i == 7)
+		i = 0;
+	else
+		i++;
 
 	if (std::cin)
 		std::cout << GREEN <<  "Contact sucessfully added!!" << RST <<  std::endl << std::endl << std::endl;
@@ -94,4 +97,10 @@ void	PhoneBook::searchContact()
 			flag = 1;
 		}
 	}
+}
+
+PhoneBook::PhoneBook(){
+}
+
+PhoneBook::~PhoneBook(){
 }

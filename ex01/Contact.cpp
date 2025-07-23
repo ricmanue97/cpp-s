@@ -6,13 +6,13 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 17:05:20 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/07/21 09:40:27 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/07/23 09:11:14 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-void	Contact::addName()
+void	Contact::addName(int flag)
 {
 	std::string name;
 	bool valid = false;
@@ -31,29 +31,10 @@ void	Contact::addName()
 		if (!valid)
 			std::cout << RED << "Invalid name. Please use letters only, try again! " << RST << std::endl;
 	}
-	this->FirstName = name;
-}
-
-void	Contact::addLastName()
-{
-	std::string name;
-	bool valid = false;
-
-	while (!valid)
-	{
-		getline(std::cin, name);
-		if (!std::cin)
-			return ;
-		valid = !name.empty();
-		for (size_t i = 0; i < name.length() && valid; ++i)
-		{
-			if (!isalpha(name[i]))
-				valid = false;
-		}
-		if (!valid)
-			std::cout << RED << "Invalid name. Please use letters only, try again! " << RST << std::endl;
-	}
-	this->LastName = name;
+	if (flag == 1)
+		this->FirstName = name;
+	else
+		this->LastName = name;
 }
 
 void	Contact::addNickname()
@@ -145,4 +126,10 @@ void	Contact::displayContact()
 	std::cout << "Nickname: " << NickName << std::endl;
 	std::cout << "Phonenumber: " << PhoneNumber << std::endl;
 	std::cout << "Darkest Secret: " << DarkestSecret << std::endl;
+}
+
+Contact::Contact(){
+}
+
+Contact::~Contact(){
 }
