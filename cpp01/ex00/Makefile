@@ -1,5 +1,5 @@
 
-NAME= ex00
+NAME= Brainzzzz
 
 CXX= c++
 CXXFLAGS= -Wall -Werror -Wextra -std=c++98

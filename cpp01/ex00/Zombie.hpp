@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 09:38:47 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/07/23 10:41:40 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/07/29 11:37:43 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ class Zombie
 };
 
 Zombie	*newZombie(std::string name);
+void	randomChump(std::string name);
 
 #endif
