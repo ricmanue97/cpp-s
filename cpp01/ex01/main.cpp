@@ -1,34 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/23 09:38:47 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/07/30 14:48:56 by ricmanue         ###   ########.fr       */
+/*   Created: 2025/07/29 12:01:14 by ricmanue          #+#    #+#             */
+/*   Updated: 2025/07/29 16:30:52 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
-
-#include <iostream>
-#include <iomanip>
-#include <string>
-
-
-class Zombie
-{
-	private:
-			std::string _name;
-	public :
-			Zombie(std::string name);
-			~Zombie();
-			void announce(void);
-};
-
-Zombie	*newZombie(std::string name);
-void	randomChump(std::string name);
-
-#endif
+#include "Zombie.hpp"

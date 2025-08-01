@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/23 09:38:47 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/07/30 14:48:56 by ricmanue         ###   ########.fr       */
+/*   Created: 2025/07/29 16:31:54 by ricmanue          #+#    #+#             */
+/*   Updated: 2025/07/30 14:36:19 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,11 @@ class Zombie
 	public :
 			Zombie(std::string name);
 			~Zombie();
-			void announce(void);
+			void announce();
+			void Zombie::set_Name(std::string name);
 };
 
 Zombie	*newZombie(std::string name);
-void	randomChump(std::string name);
+Zombie	*zombieHorde( int N, std::string name );
 
 #endif
