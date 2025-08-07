@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/29 12:01:14 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/08/01 20:43:11 by ricmanue         ###   ########.fr       */
+/*   Created: 2025/08/07 11:47:06 by ricmanue          #+#    #+#             */
+/*   Updated: 2025/08/07 13:54:52 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-int main()
+Weapon::Weapon(std::string type)
 {
-	int num_zombies;
-	std::string name;
+	_type = type;
+	std::cout << "Weapon Constructor has been called" << std::endl;
+}
 
-	name = "Gilberto";
-	num_zombies = 5;
+Weapon::~Weapon()
+{
+	std::cout << "Weapon Destructor has been called" << std::endl;
+}
 
-	Zombie *horde = zombieHorde(num_zombies, name);
+const std::string &Weapon::getType()
+{
+	return (_type);
+}
 
-	for (int i = 0; i < num_zombies; i++)
-		horde[i].announce();
-
-	delete[]horde;
-	return (0);
+void	Weapon::setType(std::string type)
+{
+	_type = type;
 }

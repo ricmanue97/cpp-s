@@ -1,11 +1,9 @@
-
-
-NAME= MoarBrainzzzz
+NAME= VIOLENCE
 
 CXX= c++
 CXXFLAGS= -Wall -Werror -Wextra -std=c++98 -g
 
-SRC= main.cpp Zombie.cpp zombieHorde.cpp
+SRC= main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 
 OBJ_DIR= objects
 OBJ= $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))

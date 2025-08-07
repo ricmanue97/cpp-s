@@ -6,11 +6,20 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 12:01:08 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/07/30 14:37:17 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/08/06 08:58:35 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+Zombie::Zombie()
+{
+}
+
+Zombie::~Zombie()
+{
+	std::cout << "Zombie \"" << _name << "\" destroyed" << std::endl;
+}
 
 Zombie::Zombie(std::string name)
 {
@@ -18,10 +27,6 @@ Zombie::Zombie(std::string name)
 	std::cout << "Zombie \"" << _name << "\" created" << std::endl;
 }
 
-Zombie::~Zombie()
-{
-	std::cout << "Zombie \"" << _name << "\" destroyed" << std::endl;
-}
 
 void Zombie::announce()
 {

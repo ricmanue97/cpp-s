@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/29 12:01:14 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/08/01 20:43:11 by ricmanue         ###   ########.fr       */
+/*   Created: 2025/08/07 09:31:45 by ricmanue          #+#    #+#             */
+/*   Updated: 2025/08/07 13:50:25 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-int main()
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+class Weapon
 {
-	int num_zombies;
-	std::string name;
+	private:
+			std::string _type;
+	public :
+			Weapon(std::string type);
+			~Weapon();
 
-	name = "Gilberto";
-	num_zombies = 5;
+			const std::string	&getType();
+			void				setType(std::string type);
 
-	Zombie *horde = zombieHorde(num_zombies, name);
+};
 
-	for (int i = 0; i < num_zombies; i++)
-		horde[i].announce();
-
-	delete[]horde;
-	return (0);
-}
+#endif

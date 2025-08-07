@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/29 12:01:14 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/08/01 20:43:11 by ricmanue         ###   ########.fr       */
+/*   Created: 2025/08/07 11:23:27 by ricmanue          #+#    #+#             */
+/*   Updated: 2025/08/07 13:54:04 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
 
-int main()
+HumanA::HumanA(std::string name, Weapon &weapon) : _name(name), _Weapon(weapon)
 {
-	int num_zombies;
-	std::string name;
+	std::cout << "HumanA Constructur has been called" << std::endl;
+}
 
-	name = "Gilberto";
-	num_zombies = 5;
+HumanA::~HumanA()
+{
+	std::cout << "HumanA Destructor has been called" << std::endl;
+}
 
-	Zombie *horde = zombieHorde(num_zombies, name);
-
-	for (int i = 0; i < num_zombies; i++)
-		horde[i].announce();
-
-	delete[]horde;
-	return (0);
+void	HumanA::attack()
+{
+	std::cout << this->_name << " atacks with their weapon " << _Weapon.getType() << std::endl;
 }
