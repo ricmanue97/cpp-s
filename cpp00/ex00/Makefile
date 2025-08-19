@@ -3,8 +3,8 @@ NAME = megaphone
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = megaphone.cpp
-OBJS = megaphone.o
+SRCS = Megaphone.cpp
+OBJS = Megaphone.o
 
 all: $(NAME)
 
