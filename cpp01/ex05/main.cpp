@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 11:14:42 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/08/19 11:41:48 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/08/19 11:50:11 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,25 @@ int main(int ac, char **av)
 	{
 		if (av[1] == levels[i])
 		{
-			type = i + 1;
+			type = i;
 			break;
 		}
 		else
-			type = 5;
+			type = 4;
 	}
 	switch (type)
 	{
-		case 1:
+		case 0:
 				harl.complain("DEBUG");
-		case 2:
+		case 1:
 				harl.complain("INFO");
-		case 3:
+		case 2:
 				harl.complain("WARNING");
-		case 4:
+		case 3:
 				harl.complain("ERROR");
 				break;
-		case 5:
-			std::cout << "CHOOSE A VALID LEVEL DUMMY" << std::endl;
-			break;
+		case 4:
+				std::cout << "CHOOSE A VALID LEVEL DUMMY!!!!!!" << std::endl;
+				break;
 	}
 }
