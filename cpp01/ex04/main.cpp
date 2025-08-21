@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 10:07:18 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/08/18 10:35:10 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/08/21 13:29:24 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main(int ac, char **av)
 	(void) ac;
 	std::ifstream File(av[1]);
 	std::ofstream Replaced ("replaced.txt");
-	std::string line, whole_file;
+	std::string line;
 
 	if (ac != 4)
 		std::cout << "Inputs should be name file -> string to find -> string to replace" << std::endl;
@@ -47,10 +47,18 @@ int main(int ac, char **av)
 			std::cout << "Filestream is not good for reading!" << std::endl;
 			return (1);
 		}
-		while (getline(File, line))
+		if (av[2][0])
 		{
-			line = write_line(line, av[2], av[3]);
-			Replaced << line << "\n";
+			while (getline(File, line))
+			{
+				line = write_line(line, av[2], av[3]);
+				Replaced << line << "\n";
+			}
+		}
+		else
+		{
+			while (getline(File, line))
+				Replaced << line << "\n";
 		}
 	}
 	File.close();
