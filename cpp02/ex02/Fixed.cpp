@@ -1,64 +1,188 @@
 #include "Fixed.hpp"
 
-FixedPoint::FixedPoint() : Fpoint(0)
+Fixed::Fixed() : _Fpoint(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-FixedPoint::FixedPoint( const FixedPoint &copy)
+Fixed::Fixed( const Fixed &copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
 }
 
-FixedPoint::FixedPoint(const float FloatValue)
+Fixed::Fixed(const float FloatValue)
 {
 	std::cout << "Float constructor called" << std::endl;
-	Fpoint = roundf(FloatValue * (1 << Bits));
+	_Fpoint = roundf(FloatValue * (1 << _Bits));
 }
 
-FixedPoint::FixedPoint(const int IntValue)
+Fixed::Fixed(const int IntValue)
 {
 	std::cout << "Int constructor called" << std::endl;
-	Fpoint = IntValue << Bits;
+	_Fpoint = IntValue << _Bits;
 }
 
-FixedPoint& FixedPoint::operator=(const FixedPoint& copy)
+Fixed& Fixed::operator=(const Fixed& og)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	if (this != &copy)
-		Fpoint = copy.Fpoint;
+	if (this != &og)
+		_Fpoint = og._Fpoint;
 	return (*this);
 }
 
-std::ostream& operator<<(std::ostream &out, const FixedPoint& value)
+std::ostream& operator<<(std::ostream &out, const Fixed& value)
 {
 	out << value.toFloat();
 	return (out);
 }
 
-FixedPoint::~FixedPoint()
+Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
 }
 
-int FixedPoint::getRawBits()const
+int Fixed::getRawBits()const
 {
 	std::cout << "getRawBits member function called" << std::endl;
-	return(Fpoint);
+	return(_Fpoint);
 }
 
-void FixedPoint::setRawBits(int const raw)
+void Fixed::setRawBits(int const raw)
 {
-	Fpoint = raw;
+	_Fpoint = raw;
 }
 
-float FixedPoint::toFloat()const
+float Fixed::toFloat()const
 {
-	return ((float)Fpoint / (1 << Bits));
+	return ((float)_Fpoint / (1 << _Bits));
 }
 
-int FixedPoint::toInt()const
+int Fixed::toInt()const
 {
-	return (Fpoint >> Bits);
+	return (_Fpoint >> _Bits);
 }
+
+
+bool Fixed::operator>(const Fixed& og)const
+{
+	if (this->getRawBits() > og.getRawBits())
+		return(true);
+	return(false);
+}
+
+bool Fixed::operator>=(const Fixed& og)const
+{
+	if (this->getRawBits() >= og.getRawBits())
+		return(true);
+	return(false);
+}
+
+bool Fixed::operator<(const Fixed& og)const
+{
+	if (this->getRawBits() < og.getRawBits())
+		return(true);
+	return(false);
+}
+
+bool Fixed::operator<=(const Fixed& og)const
+{
+	if (this->getRawBits() <= og.getRawBits())
+		return(true);
+	return(false);
+}
+bool Fixed::operator==(const Fixed& og)const
+{
+	if (this->getRawBits() == og.getRawBits())
+		return(true);
+	return(false);
+}
+bool Fixed::operator!=(const Fixed& og)const
+{
+	if (this->getRawBits() != og.getRawBits())
+		return(true);
+	return(false);
+}
+
+float Fixed::operator+(const Fixed& og)
+{
+	float rvalue = (float)this->getRawBits() + (float)og.getRawBits();
+	return(rvalue);
+}
+
+float Fixed::operator-(const Fixed& og)
+{
+	float rvalue = (float)this->getRawBits() - (float)og.getRawBits();
+	return(rvalue);
+}
+
+float Fixed::operator*(const Fixed& og)
+{
+	float rvalue = (float)this->getRawBits() * (float)og.getRawBits();
+	return(rvalue);
+}
+
+float Fixed::operator/(const Fixed& og)
+{
+	float rvalue = (float)this->getRawBits() / (float)og.getRawBits();
+	return(rvalue);
+}
+
+Fixed& Fixed::operator++()
+{
+	this->_Fpoint++;
+	return(*this);
+}
+
+Fixed& Fixed::operator--()
+{
+	this->_Fpoint--;
+	return(*this);
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed tmp = *this;
+	_Fpoint++;
+	return (tmp);
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed tmp = *this;
+	_Fpoint--;
+	return (tmp);
+}
+
+Fixed& Fixed::min(Fixed& first, Fixed& second)
+{
+	if (first._Fpoint < second._Fpoint)
+		return (first);
+	else
+		return (second);
+}
+
+const Fixed& Fixed::min(const Fixed& first, const Fixed& second)
+{
+	if (first._Fpoint < second._Fpoint)
+		return (first);
+	else
+		return (second);
+}
+
+Fixed& Fixed::max(Fixed& first, Fixed& second)
+{
+	if (first._Fpoint > second._Fpoint)
+		return (first);
+	else
+		return (second);
+}
+
+const Fixed& Fixed::max(const Fixed& first, const Fixed& second)
+{
+	if (first._Fpoint > second._Fpoint)
+		return (first);
+	else
+		return (second);
+}
+

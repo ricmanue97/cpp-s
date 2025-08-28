@@ -3,9 +3,9 @@
 
 int main( void )
 {
-	FixedPoint a;
-	FixedPoint b(a);
-	FixedPoint c;
+	Fixed a;
+	Fixed b(a);
+	Fixed c;
 
 	c = b;
 

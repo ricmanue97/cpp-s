@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:53:24 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/08/27 14:44:27 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/08/28 10:26:53 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,26 @@
 #include <cmath>
 
 
-class FixedPoint
+class Fixed
 {
 
 	private:
-			int Fpoint;
-			static const int Bits = 8;
+			int _Fpoint;
+			static const int _Bits = 8;
 
 	public:
-			FixedPoint();
-			FixedPoint(const float FloatValue);
-			FixedPoint(const int IntValue);
-			FixedPoint(const FixedPoint& copy);
-			FixedPoint& operator=(const FixedPoint& copy);
-			~FixedPoint();
+			Fixed();
+			Fixed(const float FloatValue);
+			Fixed(const int IntValue);
+			Fixed(const Fixed& copy);
+			Fixed& operator=(const Fixed& copy);
+			~Fixed();
 			int getRawBits()const;
 			void setRawBits(int const raw);
 			float toFloat()const;
 			int toInt()const;
 };
 
-std::ostream& operator<<(std::ostream &out, const FixedPoint& value);
+std::ostream& operator<<(std::ostream &out, const Fixed& value);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 10:30:10 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/08/26 15:20:28 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/08/28 10:26:53 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,18 @@
 #include <string>
 
 
-class FixedPoint
+class Fixed
 {
 
 	private:
-			int Fpoint;
-			const static int bits = 8;
+			int _Fpoint;
+			const static int _Bits = 8;
 
 	public:
-			FixedPoint();
-			FixedPoint(const FixedPoint& copy);
-			FixedPoint& operator=(const FixedPoint& copy);
-			~FixedPoint();
+			Fixed();
+			Fixed(const Fixed& copy);
+			Fixed& operator=(const Fixed& copy);
+			~Fixed();
 			int getRawBits()const;
 			void setRawBits(int const raw);
 };

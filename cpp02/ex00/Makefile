@@ -1,5 +1,5 @@
 
-NAME= FixedPoint
+NAME= Fixed
 
 CXX= c++
 CXXFLAGS= -Wall -Werror -Wextra -std=c++98 -g
