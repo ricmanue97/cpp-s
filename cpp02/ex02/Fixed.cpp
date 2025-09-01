@@ -104,28 +104,32 @@ bool Fixed::operator!=(const Fixed& og)const
 	return(false);
 }
 
-float Fixed::operator+(const Fixed& og)
+Fixed Fixed::operator+(const Fixed& og)
 {
-	float rvalue = (float)this->getRawBits() + (float)og.getRawBits();
-	return(rvalue);
+	float rvalue(this->getRawBits() + og.getRawBits());
+
+	return (Fixed (rvalue / (1 << _Bits)));
 }
 
-float Fixed::operator-(const Fixed& og)
+Fixed Fixed::operator-(const Fixed& og)
 {
-	float rvalue = (float)this->getRawBits() - (float)og.getRawBits();
-	return(rvalue);
+	float rvalue(this->getRawBits() - og.getRawBits());
+
+	return (Fixed (rvalue / (1 << _Bits)));
 }
 
-float Fixed::operator*(const Fixed& og)
+Fixed Fixed::operator*(const Fixed& og)
 {
-	float rvalue = (float)this->getRawBits() * (float)og.getRawBits();
-	return(rvalue);
+	float rvalue = this->getRawBits() * og.getRawBits();
+
+	return (Fixed (rvalue / (1 << _Bits * 2)));
 }
 
-float Fixed::operator/(const Fixed& og)
+Fixed Fixed::operator/(const Fixed& og)
 {
-	float rvalue = (float)this->getRawBits() / (float)og.getRawBits();
-	return(rvalue);
+	float rvalue = (this->getRawBits() << _Bits) / og.getRawBits();
+
+	return (Fixed (rvalue / (1 << _Bits)));
 }
 
 Fixed& Fixed::operator++()

@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 17:49:46 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/07/23 09:10:06 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/08/29 13:52:58 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,18 @@ void	PhoneBook::addContact()
 	if (!std::cin)
 		return;
 
-	std::cout << "Add nickname:" << std::endl;
-	contact[i].addNickname();
+	std::cout << "Add nickName:" << std::endl;
+	contact[i].addnickName();
 	if (!std::cin)
 		return;
 
 	std::cout << "Add Phone Number:" << std::endl;
-	contact[i].addPhoneNumber();
+	contact[i].addphoneNumber();
 	if (!std::cin)
 		return;
 
 	std::cout << "Add Darkest Secret:" << std::endl;
-	contact[i].addDarkestSecret();
+	contact[i].adddarkestSecret();
 	if (!std::cin)
 		return;
 
@@ -65,7 +65,7 @@ void	PhoneBook::searchContact()
 	}
 	std::cout << YELLOW <<  "Choose the Index of the contact you wish to see!" << RST << std::endl;
 	std::cout << YELLOW <<  "-------------------------------------------" << RST << std::endl;
-	std::cout << YELLOW <<  "     Index|First Name| Last Name|  Nickname" << RST << std::endl;
+	std::cout << YELLOW <<  "     Index|First Name| Last Name|  nickName" << RST << std::endl;
 
 	i = 0;
 
@@ -99,8 +99,12 @@ void	PhoneBook::searchContact()
 	}
 }
 
-PhoneBook::PhoneBook(){
+PhoneBook::PhoneBook()
+{
+
 }
 
-PhoneBook::~PhoneBook(){
+PhoneBook::~PhoneBook()
+{
+
 }

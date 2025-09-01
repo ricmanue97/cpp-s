@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 17:05:20 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/07/23 09:29:18 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/08/29 16:01:15 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ void	Contact::addName(int flag)
 			std::cout << RED << "Invalid name. Please use letters only, try again! " << RST << std::endl;
 	}
 	if (flag == 1)
-		this->FirstName = name;
+		this->firstName = name;
 	else
-		this->LastName = name;
+		this->lastName = name;
 }
 
-void	Contact::addNickname()
+void	Contact::addnickName()
 {
 	std::string name;
 	bool valid = false;
@@ -51,18 +51,18 @@ void	Contact::addNickname()
 		{
 			if (name[i] <= 33 || name[i] >= 127)
 			{
-				std::cout << RED <<"Invalid characters for nickname, try again!" << RST << std::endl;
+				std::cout << RED <<"Invalid characters for nickName, try again!" << RST << std::endl;
 				valid = false;
 				break ;
 			}
 			else
 				valid = true;
 		}
-		this->NickName = name;
+		this->nickName = name;
 	}
 }
 
-void	Contact::addPhoneNumber()
+void	Contact::addphoneNumber()
 {
 	std::string number;
 	int	flag;
@@ -85,22 +85,22 @@ void	Contact::addPhoneNumber()
 		else
 			flag = 1;
 	}
-	this->PhoneNumber = number;
+	this->phoneNumber = number;
 }
 
-void	Contact::addDarkestSecret()
+void	Contact::adddarkestSecret()
 {
 	std::string secret;
 
 	getline(std::cin, secret);
 	if (!std::cin)
 		return ;
-	this->DarkestSecret = secret;
+	this->darkestSecret = secret;
 }
 
 void	Contact::displayLine()
 {
-	std::string arr[] = {FirstName, LastName, NickName, ""};
+	std::string arr[] = {firstName, lastName, nickName, ""};
 
 	for (int i = 0; !arr[i].empty(); i++)
 	{
@@ -114,22 +114,26 @@ void	Contact::displayLine()
 
 int	Contact::isEmpty()
 {
-	if (FirstName.empty())
+	if (firstName.empty())
 		return (1);
 	return (0);
 }
 
 void	Contact::displayContact()
 {
-	std::cout << YELLOW << "First name: " << FirstName << RST <<  std::endl;
-	std::cout << YELLOW << "Last name: " << LastName << RST <<  std::endl;
-	std::cout << YELLOW << "Nickname: " << NickName << RST <<  std::endl;
-	std::cout << YELLOW << "Phonenumber: " << PhoneNumber << RST <<  std::endl;
-	std::cout << YELLOW << "Darkest Secret: " << DarkestSecret << RST <<  std::endl;
+	std::cout << YELLOW << "First name: " << firstName << RST <<  std::endl;
+	std::cout << YELLOW << "Last name: " << lastName << RST <<  std::endl;
+	std::cout << YELLOW << "nickName: " << nickName << RST <<  std::endl;
+	std::cout << YELLOW << "phoneNumber: " << phoneNumber << RST <<  std::endl;
+	std::cout << YELLOW << "Darkest Secret: " << darkestSecret << RST <<  std::endl;
 }
 
-Contact::Contact(){
+Contact::Contact()
+{
+
 }
 
-Contact::~Contact(){
+Contact::~Contact()
+{
+
 }

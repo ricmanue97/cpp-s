@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 14:55:15 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/08/28 15:07:32 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/08/29 12:00:43 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ class Fixed
 			bool operator==(const Fixed& og)const;
 			bool operator!=(const Fixed& og)const;
 
-			float operator+(const Fixed& og);
-			float operator-(const Fixed& og);
-			float operator*(const Fixed& og);
-			float operator/(const Fixed& og);
+			Fixed operator+(const Fixed& og);
+			Fixed operator-(const Fixed& og);
+			Fixed operator*(const Fixed& og);
+			Fixed operator/(const Fixed& og);
 
 			Fixed& operator++();
 			Fixed operator++(int);

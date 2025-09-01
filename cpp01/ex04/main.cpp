@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 10:07:18 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/08/21 13:29:24 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/09/01 11:12:35 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,9 @@ int main(int ac, char **av)
 {
 	(void) ac;
 	std::ifstream File(av[1]);
-	std::ofstream Replaced ("replaced.txt");
+	std::string name = av[1] ;
+	std::string extension = name + ".replace";
+	std::ofstream Replaced (extension.c_str());
 	std::string line;
 
 	if (ac != 4)

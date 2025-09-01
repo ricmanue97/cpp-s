@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 10:57:05 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/07/23 09:10:21 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/08/29 13:52:58 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,18 @@
 class Contact
 {
 	private :
-			std::string FirstName;
-			std::string LastName;
-			std::string NickName;
-			std::string PhoneNumber;
-			std::string DarkestSecret;
+			std::string firstName;
+			std::string lastName;
+			std::string nickName;
+			std::string phoneNumber;
+			std::string darkestSecret;
 	public :
 		Contact();
 		~Contact();
 			void	addName(int flag);
-			void	addNickname();
-			void	addPhoneNumber();
-			void	addDarkestSecret();
+			void	addnickName();
+			void	addphoneNumber();
+			void	adddarkestSecret();
 			void	displayLine();
 			void	displayContact();
 			int		isEmpty();
