@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/18 11:14:42 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/09/01 13:59:52 by ricmanue         ###   ########.fr       */
+/*   Created: 2025/08/18 11:14:38 by ricmanue          #+#    #+#             */
+/*   Updated: 2025/08/18 11:18:12 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
 
-int main(int ac, char **av)
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+class Harl
 {
-	if (ac != 2)
-	{
-		std::cout << "Input one level dummy!!!!" << std::endl;
-		return (1);
-	}
+	private:
+			void debug( void );
+			void info( void );
+			void warning( void );
+			void error( void );
 
-	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	Harl harl;
+	public:
+			Harl();
+			~Harl();
+			void complain( std::string level );
 
-	for (size_t i = 0; i < 4; i++)
-	{
-		if (av[1] == levels[i])
-		{
-			harl.complain(av[1]);
-			return (0);
-		}
-	}
+};
 
-	std::cout << "CHOOSE A VALID LEVEL DUMMY!!!!!!" << std::endl;
-}
+#endif
