@@ -1,10 +1,10 @@
 
-NAME= ClapTrap
+NAME = Repeat
 
 CXX= c++
 CXXFLAGS= -Wall -Werror -Wextra -std=c++98 -g
 
-SRC= main.cpp ClapTrap.cpp
+SRC= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 OBJ_DIR= objects
 OBJ= $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
