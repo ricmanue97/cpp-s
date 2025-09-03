@@ -4,7 +4,7 @@
 
 int main()
 {
-	// ...existing code...
+
 	ClapTrap clap("CL4P-TP");
 	ScavTrap scav("SC4V-TP");
 	FragTrap frag("FR4G-TP");
