@@ -20,6 +20,7 @@ class Dog : public Animal
 			Dog& operator=(const Dog& og);
 			~Dog();
 
+			Brain* getBrain()const;
 			void	makeSound()const;
 
 };

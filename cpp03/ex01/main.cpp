@@ -19,6 +19,7 @@ int main()
 
 	std::cout << "\n=== scav special ===\n";
 	scav.guardGate();
+	// scav.guardGate();
 
 	std::cout << "\n=== exhaustion test ===\n";
 

@@ -30,7 +30,10 @@ ScavTrap::ScavTrap(const ScavTrap& og)
 ScavTrap&	ScavTrap::operator=(const ScavTrap& og)
 {
 	if (this != &og)
+	{
 		ClapTrap::operator=(og);
+		this->_guard= og._guard;
+	}
 	return (*this);
 }
 
@@ -49,6 +52,11 @@ void	ScavTrap::attack(const std::string& target)
 	else if (!this->_energyPoints)
 	{
 		std::cout << "ScavTrap " << this->_name << " : tooo weakkkk, braaap... no enrgy..." << std::endl;
+		return ;
+	}
+	else if (this->_guard == true)
+	{
+		std::cout << "ScavTrap " << this->_name << " : cant attack, Defense mode active" << std::endl;
 		return ;
 	}
 

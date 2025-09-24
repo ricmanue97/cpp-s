@@ -51,6 +51,12 @@ void	ScavTrap::attack(const std::string& target)
 		std::cout << "ScavTrap " << this->_name << " : tooo weakkkk, braaap... no enrgy..." << std::endl;
 		return ;
 	}
+	else if (this->_guard == true)
+	{
+		std::cout << "ScavTrap " << this->_name << " : cant attack, Defense mode active" << std::endl;
+		return ;
+	}
+
 
 	std::cout << "ScavTrap " << this->_name << "attacked " << target << " for " << this->_attackDamage << " damage!" << std::endl;
 	this->_energyPoints--;

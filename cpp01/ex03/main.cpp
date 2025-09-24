@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 09:31:59 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/08/07 13:50:57 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/09/04 14:02:38 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ int main()
 		club.setType("some other type of club");
 		jim.attack();
 	}
-return 0;
+	return 0;
 }

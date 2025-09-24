@@ -1,5 +1,4 @@
 
-
 #include "Cat.hpp"
 
 Cat::Cat() : Animal()
@@ -22,6 +21,11 @@ Cat& Cat::operator=(const Cat& og)
 	if (this != &og)
 		this->_type = og._type;
 	return (*this);
+}
+
+Brain* Cat::getBrain()const
+{
+	return (this->_brain);
 }
 
 Cat::~Cat()

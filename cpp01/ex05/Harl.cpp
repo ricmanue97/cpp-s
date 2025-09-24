@@ -6,17 +6,21 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 11:14:33 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/08/19 11:44:30 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/09/04 14:05:45 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
 Harl::Harl()
-{}
+{
+	std::cout << "Harl default constructor called" << std::endl;
+}
 
 Harl::~Harl()
-{}
+{
+	std::cout << "Harl default destructor called" << std::endl;
+}
 
 void	Harl::debug()
 {

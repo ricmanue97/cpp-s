@@ -29,16 +29,16 @@ int main()
 	std::cout << alpha.getName() << " energy after barrage: " << alpha.getEnergyPoints() << "\n\n";
 
 	std::cout << "-- Inflict fatal damage to Bravo and try actions --\n";
-	bravo.takeDamage(1000); // force HP to zero
+	bravo.takeDamage(1000);
 	bravo.attack(alpha.getName());
 	bravo.beRepaired(10);
 
 	std::cout << "\n-- Test copy constructor and assignment --\n";
-	ClapTrap copyAlpha(alpha); // copy ctor
+	ClapTrap copyAlpha(alpha);
 	std::cout << "Copy name: " << copyAlpha.getName() << " HP: " << copyAlpha.getHitPoints() << " EN: " << copyAlpha.getEnergyPoints() << "\n";
 
 	ClapTrap assigned("Placeholder");
-	assigned = bravo; // assignment
+	assigned = bravo;
 	std::cout << "Assigned name: " << assigned.getName() << " HP: " << assigned.getHitPoints() << " EN: " << assigned.getEnergyPoints() << "\n";
 
 	return 0;

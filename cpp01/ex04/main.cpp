@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 10:07:18 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/09/01 11:12:35 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/09/04 14:04:52 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,6 @@ int main(int ac, char **av)
 		if (!File.is_open())
 		{
 			std::cout << "Failed to open the file for reading!" << std::endl;
-			return (1);
-		}
-		else if (!File.good())
-		{
-			std::cout << "Filestream is not good for reading!" << std::endl;
 			return (1);
 		}
 		if (av[2][0])

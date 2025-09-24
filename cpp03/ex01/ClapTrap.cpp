@@ -80,19 +80,24 @@ void	ClapTrap::takeDamage(unsigned int amount)
 		std::cout << this->_name << ": stop attacking, i'm alredy dead!!!" << std::endl;
 		return ;
 	}
-
-	if (int(_hitPoints - amount) <= 0)
+	if (amount > 0)
 	{
-		std::cout << this->_name << ": got destroyed, what a BLOW. He deeeeeeaaaad!!!" << std::endl;
-		this->_hitPoints = 0;
-		return ;
+		if (int(_hitPoints - amount) <= 0)
+		{
+			std::cout << this->_name << ": got destroyed, what a BLOW. He deeeeeeaaaad!!!" << std::endl;
+			this->_hitPoints = 0;
+			return ;
+		}
+		else
+		{
+			std::cout << this->_name << ": just took a blow and lost " << amount << " hit points!!" << std::endl;
+			this->_hitPoints--;
+			return ;
+		}
 	}
 	else
-	{
-		std::cout << this->_name << ": just took a blow and lost " << amount << " hit points!!" << std::endl;
-		this->_hitPoints--;
-		return ;
-	}
+		std::cout << this->_name << " just took " << amount << " damage! AHAHAH what a weak opponent" << std::endl;
+
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)

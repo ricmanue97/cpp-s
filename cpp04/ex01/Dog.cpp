@@ -24,6 +24,11 @@ Dog& Dog::operator=(const Dog& og)
 	return (*this);
 }
 
+Brain* Dog::getBrain()const
+{
+	return (this->_brain);
+}
+
 Dog::~Dog()
 {
 	std::cout << "Dog default destructor called" << std::endl;

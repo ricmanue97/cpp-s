@@ -6,15 +6,14 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 11:47:06 by ricmanue          #+#    #+#             */
-/*   Updated: 2025/09/01 10:46:09 by ricmanue         ###   ########.fr       */
+/*   Updated: 2025/09/04 14:03:37 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-Weapon::Weapon(std::string type)
+Weapon::Weapon(std::string type) :_type(type)
 {
-	_type = type;
 	std::cout << "Weapon Constructor has been called" << std::endl << std::endl;
 }
 
