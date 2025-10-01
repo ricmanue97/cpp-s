@@ -2,7 +2,7 @@
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("cat")
+Cat::Cat() : Animal("Cat")
 {
 	std::cout << "Cat default constrcutor called" << std::endl;
 }

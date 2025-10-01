@@ -9,11 +9,11 @@ class AAnimal
 {
 	protected:
 		std::string _type;
-		
-	public:
 		AAnimal();
 		AAnimal(const AAnimal& other);
 		AAnimal(std::string type);
+
+	public:
 		AAnimal& operator=(const AAnimal& other);
 		virtual ~AAnimal();
 

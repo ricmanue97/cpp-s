@@ -1,4 +1,3 @@
-
 #pragma once
 
 #include <iostream>
@@ -13,5 +12,6 @@ class Brain
 			Brain(const Brain& og);
 			Brain& operator=(const Brain& og);
 			~Brain();
+			std::string getIdea(unsigned int num);
 
 };

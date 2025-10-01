@@ -30,3 +30,8 @@ Brain::~Brain()
 {
 	std::cout << "Brain default destructor called" << std::endl;
 }
+
+std::string Brain::getIdea(unsigned int num)
+{
+	return(this->_ideas[num]);
+}
