@@ -1,7 +1,7 @@
 
 #include "Cat.hpp"
 
-Cat::Cat() :Animal("Cat")
+Cat::Cat() : Animal("Cat")
 {
 	std::cout << "Cat default constrcutor called" << std::endl;
 	_brain = new (Brain);
