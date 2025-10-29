@@ -32,7 +32,7 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap& og)
 	if (this != &og)
 	{
 		ClapTrap::operator=(og);
-		this->_guard= og._guard;
+		this->_guard = og._guard;
 	}
 	return (*this);
 }
