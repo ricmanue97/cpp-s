@@ -28,7 +28,7 @@ class Form
 		bool	getIsSigned();
 
 		void	beSigned(Bureaucrat& Crat);
-
+		
 		class	GradeTooHighException: public std::exception
 		{
 			virtual const char* what() const throw();

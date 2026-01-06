@@ -60,8 +60,8 @@ int main()
 {
 	try
 	{
-		Bureaucrat Duarte("Duarte", 150);
-		Bureaucrat Ricardo("Ricardo", 1);
+		Bureaucrat Duarte("Duarte", 148);
+		Bureaucrat Ricardo("Ricardo", 2);
 
 		std::cout << "----- Initial values -----\n";
 		std::cout << Duarte;
