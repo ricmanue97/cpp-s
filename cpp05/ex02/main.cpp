@@ -18,28 +18,100 @@ int	main(void)
 	std::cout<<robotomy<<std::endl<<std::endl;
 	std::cout<<pardon<<std::endl<<std::endl;
 
-	bob.signForm(shrubbery);
-	general.executeForm(shrubbery);
-	general.signForm(shrubbery);
-	bob.executeForm(shrubbery);
-	general.executeForm(shrubbery);
-	std::cout<<std::endl;
+		try {
+			bob.signForm(shrubbery);
+		} catch (const std::exception &e) {
+			std::cerr << "Exception: " << e.what() << std::endl;
+		}
+		try {
+			general.executeForm(shrubbery);
+		} catch (const std::exception &e) {
+			std::cerr << "Exception: " << e.what() << std::endl;
+		}
+		try {
+			general.signForm(shrubbery);
+		} catch (const std::exception &e) {
+			std::cerr << "Exception: " << e.what() << std::endl;
+		}
+		try {
+			bob.executeForm(shrubbery);
+		} catch (const std::exception &e) {
+			std::cerr << "Exception: " << e.what() << std::endl;
+		}
+		try {
+			general.executeForm(shrubbery);
+		} catch (const std::exception &e) {
+			std::cerr << "Exception: " << e.what() << std::endl;
+		}
+		std::cout<<std::endl;
 
-	bob.signForm(robotomy);
-	general.executeForm(robotomy);
-	general.signForm(robotomy);
-	bob.executeForm(robotomy);
-	general.executeForm(robotomy);
-	general.executeForm(robotomy);
-	general.executeForm(robotomy);
-	general.executeForm(robotomy);
-	std::cout<<std::endl;
+		try {
+			bob.signForm(robotomy);
+		} catch (const std::exception &e) {
+			std::cerr << "Exception: " << e.what() << std::endl;
+		}
+		try {
+			general.executeForm(robotomy);
+		} catch (const std::exception &e) {
+			std::cerr << "Exception: " << e.what() << std::endl;
+		}
+		try {
+			general.signForm(robotomy);
+		} catch (const std::exception &e) {
+			std::cerr << "Exception: " << e.what() << std::endl;
+		}
+		try {
+			bob.executeForm(robotomy);
+		} catch (const std::exception &e) {
+			std::cerr << "Exception: " << e.what() << std::endl;
+		}
+		try {
+			general.executeForm(robotomy);
+		} catch (const std::exception &e) {
+			std::cerr << "Exception: " << e.what() << std::endl;
+		}
+		try {
+			general.executeForm(robotomy);
+		} catch (const std::exception &e) {
+			std::cerr << "Exception: " << e.what() << std::endl;
+		}
+		try {
+			general.executeForm(robotomy);
+		} catch (const std::exception &e) {
+			std::cerr << "Exception: " << e.what() << std::endl;
+		}
+		try {
+			general.executeForm(robotomy);
+		} catch (const std::exception &e) {
+			std::cerr << "Exception: " << e.what() << std::endl;
+		}
+		std::cout<<std::endl;
 
-	bob.signForm(pardon);
-	general.executeForm(pardon);
-	general.signForm(pardon);
-	bob.executeForm(pardon);
-	general.executeForm(pardon);
+		try {
+			bob.signForm(pardon);
+		} catch (const std::exception &e) {
+			std::cerr << "Exception: " << e.what() << std::endl;
+		}
+		try {
+			general.executeForm(pardon);
+		} catch (const std::exception &e) {
+			std::cerr << "Exception: " << e.what() << std::endl;
+		}
+		try {
+			general.signForm(pardon);
+		} catch (const std::exception &e) {
+			std::cerr << "Exception: " << e.what() << std::endl;
+		}
+		try {
+			bob.executeForm(pardon);
+		} catch (const std::exception &e) {
+			std::cerr << "Exception: " << e.what() << std::endl;
+		}
+		try {
+			general.executeForm(pardon);
+		} catch (const std::exception &e) {
+			std::cerr << "Exception: " << e.what() << std::endl;
+		}
 
-	return (0);
+	       return (0);
 }

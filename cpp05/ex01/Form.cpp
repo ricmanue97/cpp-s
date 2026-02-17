@@ -7,7 +7,7 @@ Form::Form() : _name("Default"), _gradeSign(150), _gradeExec(150)
 	// std::cout << "Default Constructor called." << std::endl;
 }
 
-Form::Form(const std::string name, const int gradeSign, const int gradeExec) : _name(name), _gradeSign(gradeSign), _gradeExec(gradeExec), _isSigned(false)
+Form::Form(const std::string name, const int gradeSign, const int gradeExec) : _name(name), _isSigned(false), _gradeSign(gradeSign), _gradeExec(gradeExec)
 {
 	// std::cout << "Costum Constructor called." << std::endl;
 	if (_gradeSign < 1 || _gradeExec < 1)
@@ -57,12 +57,19 @@ bool	Form::getIsSigned()
 void	Form::beSigned(Bureaucrat& Crat)
 {
 	if (_isSigned)
-		throw AlreadySigned();
+		throw AlreadySignedException();
 	if (Crat.getGrade() > _gradeSign)
 		throw Bureaucrat::GradeTooLowException();
 	_isSigned = true;
 }
 
+std::ostream	&operator<<(std::ostream &out, Form &form)
+{
+	out<<form.getName()<<", signed : "<<form.getIsSigned()<<std::endl;
+	out<<form.getName()<<", grade to sign : "<<form.getSignGrade()<<std::endl;
+	out<<form.getName()<<", grade to execute : "<<form.getExecGrade();
+	return (out);
+}
 
 const char*	Form::GradeTooHighException::what() const throw()
 {
@@ -72,4 +79,9 @@ const char*	Form::GradeTooHighException::what() const throw()
 const char*	Form::GradeTooLowException::what() const throw()
 {
 	return ("Form's grade is too low");
+}
+
+const char*	Form::AlreadySignedException::what() const throw()
+{
+	return ("Form's already signed");
 }

@@ -5,6 +5,8 @@
 #include <string>
 #include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form
 {
 	private:
@@ -28,7 +30,7 @@ class Form
 		bool	getIsSigned();
 
 		void	beSigned(Bureaucrat& Crat);
-		
+
 		class	GradeTooHighException: public std::exception
 		{
 			virtual const char* what() const throw();
@@ -37,7 +39,7 @@ class Form
 		{
 			virtual const char* what() const throw();
 		};
-		class	AlreadySigned: public std::exception
+		class	AlreadySignedException: public std::exception
 		{
 			virtual const char* what() const throw();
 		};
